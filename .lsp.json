@@ -1,0 +1,10 @@
+{
+  "lspServers": {
+    "jdtls": {
+      "command": "jdtls",
+      "args": [],
+      "filetypes": ["java"],
+      "root_markers": ["pom.xml", "build.gradle", "build.gradle.kts", ".git"]
+    }
+  }
+}

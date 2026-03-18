@@ -9,5 +9,6 @@
   "keywords": [],
   "skills": "./skills/",
   "agents": "./agents/",
-  "hooks": "./hooks/hooks.json"
+  "hooks": "./hooks/hooks.json",
+  "lspServers": "./.lsp.json"
 }
