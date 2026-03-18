@@ -5,6 +5,24 @@
       "args": [],
       "filetypes": ["java"],
       "root_markers": ["pom.xml", "build.gradle", "build.gradle.kts", ".git"]
+    },
+    "pylsp": {
+      "command": "pylsp",
+      "args": [],
+      "filetypes": ["python"],
+      "root_markers": ["pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git"]
+    },
+    "ts-language-server": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+      "root_markers": ["package.json", "tsconfig.json", "jsconfig.json", ".git"]
+    },
+    "bash-language-server": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh", "bash"],
+      "root_markers": [".git"]
     }
   }
 }
