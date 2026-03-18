@@ -1,0 +1,13 @@
+{
+  "name": "claude-plugin",
+  "version": "1.0.0",
+  "description": "A Claude Code plugin",
+  "author": {
+    "name": "juno"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "hooks": "./hooks/hooks.json"
+}
