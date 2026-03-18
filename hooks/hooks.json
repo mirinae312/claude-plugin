@@ -7,12 +7,25 @@
           {
             "type": "command",
             "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/checkstyle.sh\""
+          },
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/check-package-structure.sh\""
           }
         ]
       }
     ],
     "PreToolUse": [],
     "Notification": [],
-    "Stop": []
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/trigger-review.sh\""
+          }
+        ]
+      }
+    ]
   }
 }
