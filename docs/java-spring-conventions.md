@@ -1,4 +1,6 @@
-## Java 팀 표준 구조/컨벤션
+## Java + Spring 팀 표준 구조/컨벤션
+
+> **적용 범위:** Java + Spring(Spring Boot) 프로젝트에만 적용. `pom.xml` 또는 `build.gradle`에 `spring` 의존성이 없는 프로젝트에는 적용하지 않는다.
 
 ### 아키텍처
 

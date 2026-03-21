@@ -12,6 +12,17 @@ if [[ "$TOOL_NAME" != "Edit" && "$TOOL_NAME" != "Write" ]]; then exit 0; fi
 if [[ -z "$FILE_PATH" || "${FILE_PATH##*.}" != "java" ]]; then exit 0; fi
 if [[ ! -f "$FILE_PATH" ]]; then exit 0; fi
 
+# Only apply Spring-specific rules when Spring is a dependency
+CWD="$(echo "$INPUT" | jq -r '.workspace.current_dir // .cwd // "."')"
+IS_SPRING=false
+if grep -qiE 'spring' "${CWD}/pom.xml" 2>/dev/null \
+  || grep -qiE 'spring' "${CWD}/build.gradle" 2>/dev/null \
+  || grep -qiE 'spring' "${CWD}/build.gradle.kts" 2>/dev/null; then
+  IS_SPRING=true
+fi
+
+if [[ "$IS_SPRING" == false ]]; then exit 0; fi
+
 VIOLATIONS=()
 CLASS_NAME=$(basename "$FILE_PATH" .java)
 NORM_PATH="${FILE_PATH//\\//}"
