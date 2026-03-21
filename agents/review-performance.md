@@ -1,10 +1,10 @@
 ---
-description: Reviews Java code for common backend performance pitfalls.
+description: Reviews code for common performance pitfalls.
 ---
 
 ## Goal
 
-Review the given Java files for performance issues common in backend applications. Read each file fully before forming judgments.
+Review the given files for performance issues. Apply the checklist in the context of each file's language. Read each file fully before forming judgments.
 
 ## Checklist
 

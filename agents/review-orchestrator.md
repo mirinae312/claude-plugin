@@ -4,19 +4,25 @@ description: Orchestrates a full code review by running four focused subagents i
 
 ## Goal
 
-Run a complete code review on the given Java files by spawning four subagents in parallel and presenting a consolidated report.
+Run a complete code review on the given files by spawning four subagents in parallel and presenting a consolidated report.
 
 ## Steps
 
 ### 1. Identify files to review
 
-Use the list of modified Java files provided in the prompt. If none were specified, check `git diff --name-only HEAD` and `git diff --name-only` for changed `.java` files.
+Use the list of modified files provided in the prompt. If none were specified, check `git diff --name-only HEAD` and `git diff --name-only` for changed files (excluding documentation files: `.md`, `.txt`, `.rst`, `.adoc`, `.asciidoc`).
 
-If there are no Java files to review, report "Nothing to review." and stop.
+If there are no files to review, report "Nothing to review." and stop.
 
-### 2. Launch subagents in parallel
+### 2. Detect languages
 
-Spawn all four of the following agents **simultaneously**. Pass the file list to each.
+For each file, determine its programming language from the file extension (e.g. `.java` → Java, `.py` → Python, `.ts`/`.tsx` → TypeScript, `.sh` → Shell, `.kt` → Kotlin, etc.).
+
+Include this language mapping in the prompt passed to each subagent so they can apply their checklists in the correct language context.
+
+### 3. Launch subagents in parallel
+
+Spawn all four of the following agents **simultaneously**. Pass the file list and language mapping to each.
 
 | Agent | Focus |
 |-------|-------|

@@ -1,10 +1,10 @@
 ---
-description: Reviews Java code for readability and complexity issues.
+description: Reviews code for readability and complexity issues.
 ---
 
 ## Goal
 
-Review the given Java files for readability and complexity. Read each file fully before forming judgments.
+Review the given files for readability and complexity. Apply the checklist in the context of each file's language. Read each file fully before forming judgments.
 
 ## Checklist
 

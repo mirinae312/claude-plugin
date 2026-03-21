@@ -1,10 +1,10 @@
 ---
-description: Reviews Java code for exception handling gaps and security vulnerabilities.
+description: Reviews code for exception handling gaps and security vulnerabilities.
 ---
 
 ## Goal
 
-Review the given Java files for exception handling and security issues. Read each file fully before forming judgments.
+Review the given files for exception handling and security issues. Apply the checklist in the context of each file's language. Read each file fully before forming judgments.
 
 ## Checklist
 

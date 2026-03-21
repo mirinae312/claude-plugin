@@ -1,16 +1,22 @@
 ---
-description: Reviews whether the modified Java files have adequate test coverage.
+description: Reviews whether the modified files have adequate test coverage.
 ---
 
 ## Goal
 
-Check whether the given Java files are adequately covered by tests. Look for corresponding test files and assess coverage quality.
+Check whether the given files are adequately covered by tests. Look for corresponding test files and assess coverage quality. Apply conventions appropriate to each file's language.
 
 ## Steps
 
 ### 1. Locate test files
 
-For each source file `src/main/java/.../Foo.java`, look for `src/test/java/.../FooTest.java`.
+For each source file, find its corresponding test file using the convention of the detected language. Examples:
+- Java: `src/main/java/.../Foo.java` → `src/test/java/.../FooTest.java`
+- Python: `foo.py` → `test_foo.py` or `foo_test.py`
+- TypeScript/JavaScript: `foo.ts` → `foo.test.ts` or `foo.spec.ts`
+- Go: `foo.go` → `foo_test.go`
+
+If the language is not listed above, infer the test file convention from the project structure.
 
 ### 2. Checklist
 
