@@ -25,14 +25,7 @@ for layer in controller service repository dao mapper; do
   fi
 done
 
-# ── Rule 2: Config-like classes must be in _config or common ──────────────────
-if echo "$CLASS_NAME" | grep -qiE '(Config|Configuration|Properties|Interceptor|Filter|Advice|Handler|Resolver|Converter|Serializer|Deserializer)$'; then
-  if ! echo "$NORM_PATH" | grep -qE '/(_config|common)/'; then
-    VIOLATIONS+=("'${CLASS_NAME}' looks like a configuration class but is not under '_config' or 'common' package.")
-  fi
-fi
-
-# ── Rule 3: Business classes must not be in _config ───────────────────────────
+# ── Rule 2: Business classes must not be in _config ───────────────────────────
 if echo "$NORM_PATH" | grep -qE '/_config/'; then
   if echo "$CLASS_NAME" | grep -qiE '(Controller|Service|Repository|Dao|Mapper)$'; then
     VIOLATIONS+=("'${CLASS_NAME}' is a business class inside '_config'. Business logic must not be placed in '_config'.")

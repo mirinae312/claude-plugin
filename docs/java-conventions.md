@@ -36,7 +36,7 @@ com.{company}.{project}
 
 ### Config 클래스
 
-`Config`, `Configuration`, `Properties`, `Interceptor`, `Filter`, `Advice`, `Handler`, `Resolver`, `Converter`, `Serializer`, `Deserializer` suffix를 가진 클래스는 전체 공통 `_config/` 패키지에 위치.
+`Config`, `Configuration`, `Properties`, `Interceptor`, `Filter`, `Advice`, `Handler`, `Resolver`, `Converter`, `Serializer`, `Deserializer` suffix를 가진 클래스는 **원칙적으로** 전체 공통 `_config/` 패키지에 위치.
 
 ```
 com.{company}.{project}
@@ -47,6 +47,8 @@ com.{company}.{project}
 └── user/
     └── ...
 ```
+
+단, 도메인에 특화된 경우(예: `UserExceptionHandler`)는 해당 도메인 패키지에 위치해도 무방.
 
 ### 예외 처리
 
