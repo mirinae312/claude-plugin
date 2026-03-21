@@ -1,0 +1,22 @@
+# {service-name}
+
+## Service
+- role: {서비스 역할 한 줄 설명}
+- port: {포트}
+- stack: {기술 스택, 예: Spring Boot 3.x / Java 17 / MySQL}
+
+## API
+<!-- 이 서비스가 외부에 제공하는 엔드포인트. 없으면 "없음"으로 표기. -->
+- METHOD /path : 설명
+
+## Events Published
+<!-- 이 서비스가 발행하는 이벤트. 없으면 "없음"으로 표기. -->
+- topic.name : 발행 조건 설명
+
+## Events Consumed
+<!-- 이 서비스가 구독하는 이벤트. 없으면 "없음"으로 표기. -->
+- topic.name : 처리 내용
+
+## Dependencies
+<!-- 이 서비스가 호출하는 다른 서비스. 없으면 "없음"으로 표기. -->
+- {service-name}: 호출 이유 (HTTP API 또는 이벤트)
