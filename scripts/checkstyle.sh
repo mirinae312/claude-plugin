@@ -6,10 +6,6 @@ PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
 DATA_DIR="${CLAUDE_PLUGIN_DATA:-$PLUGIN_ROOT/.checkstyle-data}"
 mkdir -p "$DATA_DIR"
 
-CHECKSTYLE_VERSION="10.21.4"
-CHECKSTYLE_JAR="$DATA_DIR/checkstyle-${CHECKSTYLE_VERSION}-all.jar"
-CHECKSTYLE_XML="$DATA_DIR/google_checks.xml"
-
 # Read hook input JSON from stdin
 INPUT="$(cat)"
 TOOL_NAME="$(echo "$INPUT" | jq -r '.tool_name // empty')"
@@ -27,6 +23,10 @@ fi
 if [[ ! -f "$FILE_PATH" ]]; then
   exit 0
 fi
+
+CHECKSTYLE_VERSION="10.21.4"
+CHECKSTYLE_JAR="$DATA_DIR/checkstyle-${CHECKSTYLE_VERSION}-all.jar"
+CHECKSTYLE_XML="$DATA_DIR/google_checks.xml"
 
 # Download checkstyle jar if missing
 if [[ ! -f "$CHECKSTYLE_JAR" ]]; then
