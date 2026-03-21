@@ -24,6 +24,10 @@ if [[ -z "$FILE_PATH" || "${FILE_PATH##*.}" != "java" ]]; then
   exit 0
 fi
 
+if [[ ! -f "$FILE_PATH" ]]; then
+  exit 0
+fi
+
 # Download checkstyle jar if missing
 if [[ ! -f "$CHECKSTYLE_JAR" ]]; then
   echo "[checkstyle] Downloading checkstyle ${CHECKSTYLE_VERSION}..." >&2
@@ -36,10 +40,6 @@ if [[ ! -f "$CHECKSTYLE_XML" ]]; then
   echo "[checkstyle] Downloading google_checks.xml..." >&2
   curl -fsSL -o "$CHECKSTYLE_XML" \
     "https://raw.githubusercontent.com/checkstyle/checkstyle/checkstyle-${CHECKSTYLE_VERSION}/src/main/resources/google_checks.xml"
-fi
-
-if [[ ! -f "$FILE_PATH" ]]; then
-  exit 0
 fi
 
 echo "[checkstyle] Checking $FILE_PATH ..." >&2
