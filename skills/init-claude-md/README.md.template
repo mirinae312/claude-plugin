@@ -1,0 +1,54 @@
+# {service-name}
+
+## Overview
+
+{서비스 역할 설명}
+
+- **Stack:** {기술 스택, 예: Spring Boot 3.x / Java 17 / MySQL}
+- **Port:** {포트}
+
+## API
+
+| Method | Path | Description |
+|--------|------|-------------|
+| METHOD | /path | 설명 |
+
+<!--
+[MSA only] 아래 섹션은 MSA 서비스일 때만 포함한다.
+-->
+
+## Events
+
+### Published
+
+| Topic | When |
+|-------|------|
+| topic.name | 발행 조건 |
+
+### Consumed
+
+| Topic | Handled As |
+|-------|------------|
+| topic.name | 처리 내용 |
+
+## Service Dependencies
+
+| Service | Reason |
+|---------|--------|
+| {service-name} | 호출 이유 |
+
+<!--
+[MSA only 끝]
+-->
+
+## Getting Started
+
+```bash
+# 의존성 설치 및 실행 방법
+```
+
+## Contributing
+
+```bash
+# 테스트 실행 방법
+```

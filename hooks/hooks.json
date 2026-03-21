@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/update-claude-md.sh\""
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/update-docs.sh\""
           },
           {
             "type": "command",
