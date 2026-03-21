@@ -5,3 +5,12 @@ Whenever a new feature is added to this plugin that requires an external tool (L
 - The new tool in the required tools table
 - The check command in Step 2
 - The install command for each supported OS (macOS/Homebrew, Linux/apt) in Step 4
+
+## Generate-tests skill maintenance
+
+Whenever a new language is added to this plugin, **always create `skills/generate-tests/{language}/SKILL.md`** to include:
+
+- The file extensions that trigger this skill
+- The config files to detect the test stack
+- The supported frameworks and mocking libraries
+- The test file location convention
